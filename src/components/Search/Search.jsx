@@ -20,17 +20,32 @@ useEffect(()=>{
         });
         setResults(data.query.search)
     };
-    search();
+    const timeoutId = setTimeout(()=>{
+        if(term){
+            search();
+        }
+    },1000)
+    return()=>{
+        clearTimeout(timeoutId)
+    }
+
 },[term])
 
 const renderedResults = results.map((result)=>{
     return(
     <div className="item" key={result.pageid}>
+        <div className="right floated content">
+            <a 
+            className="ui button"
+            href={`https://en.wikipedia.org?curid=${result.pageid}`}
+            >GO</a>
+        </div>
         <div className="content">
             <div className="header">
                 {result.title}
             </div>
-            {result.snippet}
+            <span dangerouslySetInnerHTML={{ __html:result.snippet}}></span>
+            {/* when we use this span we open to hackers */}
         </div>
     </div>
     )
@@ -49,6 +64,7 @@ const renderedResults = results.map((result)=>{
             </div>
             <div className="ui celled list">
                 {renderedResults}
+                
             </div>
         </div>
     )
