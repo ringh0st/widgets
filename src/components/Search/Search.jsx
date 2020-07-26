@@ -47,9 +47,10 @@ const renderedResults = results.map((result)=>{
             >GO</a>
         </div>
         <div className="content">
-            <div className="header">
+            <a className="header"
+            href={`https://en.wikipedia.org?curid=${result.pageid}`}>
                 {result.title}
-            </div>
+            </a>
             <span dangerouslySetInnerHTML={{ __html:result.snippet}}></span>
             {/* when we use this span we open to hackers */}
         </div>
@@ -68,7 +69,7 @@ const renderedResults = results.map((result)=>{
                     />
                 </div>
             </div>
-            <div className="ui celled list">
+            <div className="ui huge celled list">
                 {renderedResults}
                 
             </div>
