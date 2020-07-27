@@ -1,7 +1,7 @@
 import React, {useState, useEffect}from 'react';
 import axios from 'axios';
 const Search = ()=>{
-const [term, setTerm] = useState('hello');
+const [term, setTerm] = useState('');
 const [results, setResults] = useState([]);
 console.log(results)
 useEffect(()=>{
@@ -23,7 +23,6 @@ useEffect(()=>{
     if(term && !results.length){
         search()
     } else {
-
         const timeoutId = setTimeout(()=>{
             if(term){
                 search();

@@ -1,7 +1,7 @@
 import React from 'react';
 import Accordion from './components/Accordion/Accordion';
 import Search from './components/Search/Search';
-
+import DropDown from './components/DropDown/DropDown';
 const items = [
   {
     title:'What is React?',
@@ -20,7 +20,8 @@ export default () =>{
   return (
     <div>
       {/* <Accordion items={items}/> */}
-      <Search/>
+      {/* <Search/> */}
+      <DropDown/>
     </div>
   );
 }
