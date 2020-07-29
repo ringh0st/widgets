@@ -76,3 +76,4 @@ const renderedResults = results.map((result)=>{
     )
 }
 export default Search
+
