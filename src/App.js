@@ -1,7 +1,8 @@
 import React,{useState} from 'react';
 // import Accordion from './components/Accordion/Accordion';
 // import Search from './components/Search/Search';
-import DropDown from './components/DropDown/DropDown';
+// import DropDown from './components/DropDown/DropDown';
+import Translate from './components/Translate/Translate';
 // const items = [
 //   {
 //     title:'What is React?',
@@ -16,33 +17,34 @@ import DropDown from './components/DropDown/DropDown';
 //     content:'You use react by creating component'
 //   }
 // ]
-const options = [
-  {
-    label:'The Color Red',
-    value:'red'
-  },
-  {
-    label:'The Color Green',
-    value:'green'
-  },
-  {
-    label:'Shade of Blue',
-    value:'blue'
-  }
-]
+// const options = [
+//   {
+//     label:'The Color Red',
+//     value:'red'
+//   },
+//   {
+//     label:'The Color Green',
+//     value:'green'
+//   },
+//   {
+//     label:'Shade of Blue',
+//     value:'blue'
+//   }
+// ]
 export default () =>{
-  const [selected,setSelected] = useState(options[0]);
-  const [showDropDown, setShowDropDown] = useState(true);
+  // const [selected,setSelected] = useState(options[0]);
+  // const [showDropDown, setShowDropDown] = useState(true);
   return (
     <div>
       {/* <Accordion items={items}/> */}
       {/* <Search/> */}
-      <button onClick={()=>setShowDropDown(!showDropDown)}>Show DropDown</button>
+      {/* <button onClick={()=>setShowDropDown(!showDropDown)}>Show DropDown</button>
       {showDropDown ? 
       <DropDown 
       selected={selected} 
       onSelectedChange={setSelected}
-      options={options}/> : null }
+      options={options}/> : null } */}
+      <Translate/>
     </div>
   );
 }
