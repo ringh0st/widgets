@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef} from 'react';
 
 const DropDown =({options, selected, onSelectedChange, label})=>{
     const [open, setOpen] =useState(false);
-    const ref =useRef();
+    const ref = useRef();
     useEffect(()=>{
         const onBodyClicked=(event)=>{
             if(ref.current.contains(event.target)){
@@ -10,7 +10,7 @@ const DropDown =({options, selected, onSelectedChange, label})=>{
             }
             setOpen(false)
         };
-        document.body.addEventListener('click',onBodyClicked);
+            document.body.addEventListener('click',onBodyClicked);
         return(
             document.body.removeEventListener('click',onBodyClicked)
         )
@@ -25,11 +25,10 @@ const DropDown =({options, selected, onSelectedChange, label})=>{
         className="item"
         onClick={()=>onSelectedChange(option)}
         >
-            
             {option.label}</div>
         )
     })
-    console.log(ref.current)
+    // console.log(ref.current)
     return(
         <div ref={ref} className="ui form">
             <div className="field">

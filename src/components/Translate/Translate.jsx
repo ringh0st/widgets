@@ -4,7 +4,6 @@ import Convert from '../Api/Convert';
 
 //AIzaSyCHUCmpR7cT_yDFHC98CZJy2LTms-IwDlM
 
-
 const options = [
     {
         label:'Afrikaans',
@@ -33,15 +32,15 @@ const Translate = ()=>{
                 <div className="field">
                     <label>Enter Text</label>
                     <input
-                    value={text}
-                    onChange={(e)=>setText(e.target.value)}/>
+                        value={text}
+                        onChange={(e)=>setText(e.target.value)}/>
                 </div>
             </div>
 
             <DropDown label='Select a language'
-            selected={language} 
-            onSelectedChange={setLanguage} 
-            options={options}/>
+                selected={language} 
+                onSelectedChange={setLanguage} 
+                options={options}/>
             <hr/>
             <h3 className="ui header">Output</h3>
             <Convert text={text} language={language}/>

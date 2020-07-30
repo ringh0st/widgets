@@ -1,7 +1,7 @@
 import React from 'react';
 // import Accordion from './components/Accordion/Accordion';
 // import Search from './components/Search/Search';
-// import DropDown from './components/DropDown/DropDown';
+import DropDown from './components/DropDown/DropDown';
 import Translate from './components/Translate/Translate';
 // const items = [
 //   {
@@ -31,6 +31,17 @@ import Translate from './components/Translate/Translate';
 //     value:'blue'
 //   }
 // ]
+
+const showTranslate = () => {
+  if (window.location.pathname === '/') {
+    return <Translate/>;
+  }
+};
+const showDropDown = () => {
+  if (window.location.pathname === '/dropdown') {
+    return <DropDown />;
+  }
+};
 export default () =>{
   // const [selected,setSelected] = useState(options[0]);
   // const [showDropDown, setShowDropDown] = useState(true);
@@ -44,7 +55,8 @@ export default () =>{
       selected={selected} 
       onSelectedChange={setSelected}
       options={options}/> : null } */}
-      <Translate/>
+      {showDropDown()}
+      {showTranslate()}
     </div>
   );
 }
